@@ -82,6 +82,11 @@ body {
     transform: scale(110%);
 }
 
+#header_pc li:active{
+    transform: scale(110%);
+}
+
+
 #header_phone ul{
     display: flex;
     position: fixed;
@@ -216,6 +221,10 @@ body {
 }
 
 #header_phone ul li:hover{
+    transform: scale(110%);
+}
+
+#header_phone ul li:active{
     transform: scale(110%);
 }
 
