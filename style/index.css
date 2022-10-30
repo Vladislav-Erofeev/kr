@@ -244,7 +244,6 @@ footer {
 
 main {
     width: 95%;
-    height: 1000px;
     background: rgba( 255, 255, 255, 0.4 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 7.5px );
@@ -310,5 +309,190 @@ main {
 
     #main_section div h1 {
         font-size: 40pt;
+    }
+}
+
+
+#chapters {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5%;
+    /*gap: 20px;*/
+}
+
+
+.card {
+    position: relative;
+    /*width: 150px;*/
+    /*height: 400px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.card:hover .back
+{
+    transform: skewX(0);
+}
+
+.card:hover .card_content {
+    transform: scale(105%);
+}
+
+.card:hover .card_content::before,
+.card:hover .card_content::after
+{
+    visibility: visible;
+    opacity: 1;
+}
+
+.back {
+    width: 150px;
+    height: 400px;
+    background: rgb(255,192,0);
+    background: linear-gradient(180deg, rgba(255,192,0,1) 0%, rgba(227,78,4,1) 100%);
+    filter: blur(3px);
+    border-radius: 10px;
+    transition: 0.5s ease;
+    transform: skewX(20deg);
+}
+
+.card_content {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25pt;
+    /*top: 50%;*/
+    /*left: -65px;*/
+    filter: none;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    text-align: center;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    transition: 0.5s;
+    border-radius: 20px;
+    border: 2px solid rgba( 255, 255, 255, 0.18 );
+}
+
+@keyframes moving_block {
+    from {
+        left: -10%;
+    }
+
+    5% {
+        left: -10%;
+    }
+
+    95% {
+        left: 95%;
+    }
+
+    to {
+        left: 95%;
+    }
+}
+
+@keyframes moving_block_reverse {
+    from {
+        left: 95%;
+    }
+
+    5% {
+        left: 95%;
+    }
+
+    95% {
+        left: -10%;
+    }
+
+    to {
+        left: -10%;
+    }
+}
+
+.card_content::after {
+    content: "";
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 230px;
+    transition: 0.5s;
+    left: 95%;
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    animation-name: moving_block_reverse;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.card_content::before {
+    content: "";
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top:-130px;
+    transition: 0.5s;
+    left: -10%;
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    animation-name: moving_block;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.card:hover {
+    z-index: 1;
+}
+
+#card2 .back{
+    background: rgb(48,219,0);
+    background: -moz-linear-gradient(180deg, rgba(48,219,0,1) 0%, rgba(3,120,0,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(48,219,0,1) 0%, rgba(3,120,0,1) 100%);
+    background: linear-gradient(180deg, rgba(48,219,0,1) 0%, rgba(3,120,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#30db00",endColorstr="#037800",GradientType=1);
+}
+
+#card3 .back {
+    background: rgb(0,169,233);
+    background: -moz-linear-gradient(180deg, rgba(0,169,233,1) 0%, rgba(0,84,128,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(0,169,233,1) 0%, rgba(0,84,128,1) 100%);
+    background: linear-gradient(180deg, rgba(0,169,233,1) 0%, rgba(0,84,128,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00a9e9",endColorstr="#005480",GradientType=1);
+}
+
+@media screen and (max-width: 1000px) {
+    #chapters {
+        align-items: center;
+        gap: 40px;
+        flex-direction: column;
     }
 }
