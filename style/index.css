@@ -338,12 +338,44 @@ main {
     transform: skewX(0);
 }
 
+.card:active .back
+{
+    transform: skewX(0);
+}
+
+.card:focus .back
+{
+    transform: skewX(0);
+}
+
 .card:hover .card_content {
+    transform: scale(105%);
+}
+
+.card:active .card_content {
+    transform: scale(105%);
+}
+
+.card:focus .card_content {
     transform: scale(105%);
 }
 
 .card:hover .card_content::before,
 .card:hover .card_content::after
+{
+    visibility: visible;
+    opacity: 1;
+}
+
+.card:active .card_content::before,
+.card:active .card_content::after
+{
+    visibility: visible;
+    opacity: 1;
+}
+
+.card:focus .card_content::before,
+.card:focus .card_content::after
 {
     visibility: visible;
     opacity: 1;
