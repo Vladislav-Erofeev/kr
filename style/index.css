@@ -1,10 +1,11 @@
+footer, main, header {
+    position: static;
+    margin: auto;
+    margin-top: 20px;
+}
+
 #main_content {
     position: static;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
 }
 
 #header_pc img {
@@ -536,6 +537,60 @@
     transform: scale(110%);
 }
 
+.country:nth-child(1):hover {
+    z-index: 3;
+}
+
+.country:nth-child(1):hover ~ .back_blur {
+    visibility: visible;
+    opacity: 1;
+}
+
+.country:nth-child(2):hover {
+    z-index: 3;
+}
+
+.country:nth-child(2):hover ~ .back_blur {
+    visibility: visible;
+    opacity: 1;
+}
+
+.country:nth-child(3):hover {
+    z-index: 3;
+}
+
+.country:nth-child(3):hover ~ .back_blur {
+    visibility: visible;
+    opacity: 1;
+}
+
+.country:nth-child(4):hover {
+    z-index: 3;
+}
+
+.country:nth-child(4):hover ~ .back_blur {
+    visibility: visible;
+    opacity: 1;
+}
+
+.country:nth-child(5):hover {
+    z-index: 3;
+}
+
+.country:nth-child(5):hover ~ .back_blur {
+    visibility: visible;
+    opacity: 1;
+}
+
+.country:nth-child(6):hover {
+    z-index: 3;
+}
+
+.country:nth-child(6):hover ~ .back_blur {
+    visibility: visible;
+    opacity: 1;
+}
+
 /*настройка кнопки для изменения темы сайта*/
 
 .dark_theme {
@@ -643,7 +698,8 @@ main .dark_theme {
     display: flex;
     justify-content: center;
     gap: 2%;
-    margin: 2%;
+    margin-top: 1%;
+    margin-bottom: 0;
 }
 
 #links li {
@@ -691,10 +747,10 @@ main .dark_theme {
 }
 
 #links a:nth-child(2) li::before {
-    background: rgb(121,137,255);
-    background: -moz-linear-gradient(45deg, rgba(121,137,255,1) 0%, rgba(44,70,255,1) 100%);
-    background: -webkit-linear-gradient(45deg, rgba(121,137,255,1) 0%, rgba(44,70,255,1) 100%);
-    background: linear-gradient(45deg, rgba(121,137,255,1) 0%, rgba(44,70,255,1) 100%);
+    background: rgb(158,87,242);
+    background: -moz-linear-gradient(45deg, rgba(158,87,242,1) 0%, rgba(98,2,251,1) 59%);
+    background: -webkit-linear-gradient(45deg, rgba(158,87,242,1) 0%, rgba(98,2,251,1) 59%);
+    background: linear-gradient(45deg, rgba(158,87,242,1) 0%, rgba(98,2,251,1) 59%);
 }
 
 #links a:nth-child(1) li::before {
@@ -722,4 +778,285 @@ main .dark_theme {
 
 #links a:hover li img {
     transform: scale(115%);
+}
+
+.back_blur {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150%;
+    background: rgba( 255, 255, 255, 0 );
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 5px );
+    z-index: 3;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+}
+
+/* Настройка отображения формы */
+
+#form {
+    position: fixed;
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+    width: 400px;
+    height: 400px;
+    background: rgba( 255, 255, 255, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+    backdrop-filter: blur( 11px );
+    -webkit-backdrop-filter: blur( 11px );
+    border-radius: 10px;
+    border: 2px solid rgba( 255, 255, 255, 0.18 );
+    z-index: 4;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    transition: 0.5s ease;
+    gap: 10px;
+}
+
+@keyframes moving_block_form {
+    from {
+        transform: translateY(-30px);
+    }
+
+    to {
+        transform: translateY(30px);
+    }
+}
+
+#cube1 {
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: -22%;
+}
+
+#cube2 {
+    width: 70px;
+    height: 70px;
+    top: 60%;
+    left: calc(50% + 198px);
+    z-index: 3;
+}
+
+#cube3 {
+    width: 90px;
+    height: 90px;
+    top: 20%;
+    left: calc(50% + 220px);
+    z-index: 3;
+}
+
+#cube4 {
+    width: 50px;
+    height: 50px;
+    top: 10%;
+    left: calc(50%  - 60px);
+    z-index: 3;
+}
+
+#cube5 {
+    width: 40px;
+    height: 40px;
+    top: 87%;
+    left: calc(50%  + 60px);
+    z-index: 3;
+}
+
+.cube {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s ease;
+    animation-name: moving_block_form;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: ease;
+    animation-delay:  calc(-1s * var(--i));
+
+    background: rgba( 255, 255, 255, 0.5 );
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+    backdrop-filter: blur( 9px );
+    -webkit-backdrop-filter: blur( 9px );
+    border-radius: 10px;
+    border: 2px solid rgba( 255, 255, 255, 0.18 );
+    position: fixed;
+}
+
+#form input[type="text"],
+#form input[type="email"] {
+    width: 300px;
+    height: 30px;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 40px;
+    border: 2px solid rgba( 255, 255, 255, 0.18 );
+    padding: 5px;
+    transition: 0.5s ease;
+}
+
+#form textarea {
+    background: rgba( 255, 255, 255, 0.2 );
+    width: 300px;
+    height: 130px;
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 20px;
+    border: 2px solid rgba( 255, 255, 255, 0.18 );
+    padding: 5px;
+    transition: 0.1s ease;
+}
+
+#btn {
+    width: 300px;
+    height: 30px;
+    background: rgba( 255, 255, 255, 0.8 );
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 40px;
+    border: 2px solid rgba( 255, 255, 255, 0.18 );
+    padding: 5px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+#form input[type="email"]:focus,
+#form input[type="text"]:focus {
+    background: rgba( 255, 255, 255, 0.5 );
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+    backdrop-filter: blur( 6.5px );
+    -webkit-backdrop-filter: blur( 6.5px );
+    border-radius: 40px;
+    border: 2px solid rgba( 255, 255, 255, 0.18 );
+    transition: 0.5s ease;
+}
+
+#form input[type="email"]:hover,
+#form input[type="text"]:hover
+{
+    background: rgba( 255, 255, 255, 0.5 );
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+    backdrop-filter: blur( 6.5px );
+    -webkit-backdrop-filter: blur( 6.5px );
+    border-radius: 40px;
+    border: 2px solid rgba( 255, 255, 255, 0.18 );
+    transition: 0.5s ease;
+}
+
+#open_check {
+    visibility: hidden;
+}
+
+#open_btn1 p{
+    margin: auto;
+    margin-bottom: 1%;
+    width: 200px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13pt;
+    position: relative;
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 40px;
+    transition: 0.3s;
+    cursor: pointer;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+#open_btn1 p:hover {
+    background: rgba( 255, 255, 255, 0.5 );
+    transform: scale(102%);
+}
+
+#open_check:checked ~ .back_blur {
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+}
+
+#open_check:checked ~ #form {
+    visibility: visible;
+    opacity: 1;
+}
+
+#close_btn {
+    position: fixed;
+    top: 20px;
+    left: 2%;
+    width: 50px;
+    height: 50px;
+    background: rgba( 255, 0, 0, 0.55 );
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    z-index: 3;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+    visibility: hidden;
+    transform: scale(0%);
+    opacity: 0;
+}
+
+#close_btn span{
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    border-radius: 10px;
+    transform: rotate(45deg);
+}
+
+#close_btn span::before {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    transform: rotate(-90deg);
+    border-radius: 10px;
+}
+
+#open_check:checked ~ #close_btn:hover {
+    transform: scale(107%);
+}
+
+#open_check:checked ~ #close_btn {
+    transform: scale(100%);
+    visibility: visible;
+    opacity: 1;
+}
+
+#open_check:checked ~ .cube {
+    visibility: visible;
+    opacity: 1;
+}
+
+#open_check:checked ~ .cube {
+    visibility: visible;
+    opacity: 1;
+}
+
+#open_check:checked ~ #form > .cube {
+    visibility: visible;
+    opacity: 1;
 }
