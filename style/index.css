@@ -252,7 +252,7 @@
 #main_section img {
     margin-right: 5%;
     opacity: 0.7;
-    filter: drop-shadow(3px 3px 10px);
+    filter: drop-shadow(3px 3px 10px black);
 }
 
 @media screen and (max-width: 1000px)  {
