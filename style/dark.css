@@ -34,10 +34,6 @@ body {
     box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
 }
 
-.country {
-    color: white;
-}
-
 #header_pc {
     width: 95%;
     background: rgba(136, 136, 136, 0.3);
