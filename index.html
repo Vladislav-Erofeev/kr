@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <title>Главная</title>
   <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet" href="style/light.css" id="theme_link">
 </head>
 <body>
-
 <div id="main_content">
   <header id="header_pc">
+    <div class="dark_theme">
+      <input type="checkbox" id="theme_check">
+      <label class="theme_btn" for="theme_check" id="theme_btn1">
+        <div>
+          <img src="pictures/sun.png" width="32" height="32" class="sun">
+          <div class="round">
+            <div class="round_in"></div>
+          </div>
+          <img src="pictures/moon.png" width="32" height="32" class="moon">
+        </div>
+      </label>
+    </div>
+
     <ul>
       <li>Главная</li>
       <li>Учёные</li>
@@ -32,6 +45,20 @@
   </header>
 
   <main>
+
+    <div class="dark_theme">
+      <input type="checkbox" id="theme_check1">
+      <label class="theme_btn" for="theme_check1" id="theme_btn2">
+        <div>
+          <img src="pictures/sun.png" width="32" height="32" class="sun">
+          <div class="round">
+            <div class="round_in"></div>
+          </div>
+          <img src="pictures/moon.png" width="32" height="32" class="moon">
+        </div>
+      </label>
+    </div>
+
     <section id="main_section">
       <div>
         <h1>Известные учёные</h1>
@@ -106,10 +133,48 @@
     </section>
   </main>
 
+  <div id = "back_blur">
+
+  </div>
+
   <footer>
 
   </footer>
 </div>
 
 </body>
+
+<script>
+  var btn1 = document.getElementById("theme_btn1");
+  var btn2 = document.getElementById("theme_btn2");
+  var link = document.getElementById("theme_link");
+
+  btn1.addEventListener("click", function () { ChangeTheme(); });
+  btn2.addEventListener("click", function () { ChangeTheme(); });
+
+  function ChangeTheme()
+  {
+    let lightTheme = "style/light.css";
+    let darkTheme = "style/dark.css";
+
+    var currTheme = link.getAttribute("href");
+    var theme = "";
+
+    if(currTheme == lightTheme)
+    {
+      currTheme = darkTheme;
+      theme = "dark";
+    }
+    else
+    {
+      currTheme = lightTheme;
+      theme = "light";
+    }
+
+    link.setAttribute("href", currTheme);
+
+    Save(theme);
+  }
+</script>
+
 </html>
