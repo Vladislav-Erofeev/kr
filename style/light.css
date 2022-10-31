@@ -1,0 +1,110 @@
+body {
+    background: rgb(0,128,212);
+    background: -moz-linear-gradient(180deg, rgba(0,128,212,1) 0%, rgba(189,0,213,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(0,128,212,1) 0%, rgba(189,0,213,1) 100%);
+    background: linear-gradient(180deg, rgba(0,128,212,1) 0%, rgba(189,0,213,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0080d4",endColorstr="#bd00d5",GradientType=1);
+}
+
+#header_pc li::before {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+#header_phone #menu_btn {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+#header_phone ul li::before {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+#main_section div blockquote {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+.card_content::after {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+.card_content::before {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+.country {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
+#header_pc {
+    width: 95%;
+    background: rgba( 255, 255, 255, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 5px;
+}
+
+footer {
+    width: 95%;
+    height: 200px;
+    background: rgba( 255, 255, 255, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+main {
+    width: 95%;
+    background: rgba( 255, 255, 255, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7.5px );
+    -webkit-backdrop-filter: blur( 7.5px );
+    border-radius: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+@media screen and (max-width: 1000px) {
+    #header_pc {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    #header_phone {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px)  {
+    #main_section {
+        flex-direction: column;
+    }
+
+    #main_section img {
+        display: none;
+    }
+
+    #main_section div blockquote {
+        width: 70%;
+        font-size: 18pt;
+    }
+
+    #main_section div h1 {
+        font-size: 40pt;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    footer {
+        width: 100%;
+    }
+}
