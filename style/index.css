@@ -641,7 +641,8 @@ main .dark_theme {
 
 #links {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 2%;
     margin: 2%;
 }
 
