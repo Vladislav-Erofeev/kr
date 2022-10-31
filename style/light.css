@@ -32,11 +32,16 @@ body {
 
 .card_content {
     color: black;
+    box-shadow: 0 4px 32px 0 rgba(140, 140, 140, 0.43);
 }
 
 .country {
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     color: black;
+}
+
+#links li {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 }
 
 #header_pc {
@@ -56,7 +61,6 @@ body {
 
 footer {
     width: 95%;
-    height: 200px;
     background: rgba( 255, 255, 255, 0.4 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 7.5px );

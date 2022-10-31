@@ -30,9 +30,21 @@ body {
     box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
 }
 
+.card_content {
+    box-shadow: 0 8px 32px 0 rgba(80, 80, 80, 0.6);
+}
+
 .country {
     box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
     color: white;
+}
+
+#links li {
+    box-shadow: 0 8px 32px 0 rgba(80, 80, 80, 0.6);
+}
+
+#links li img {
+    filter: invert(100%);
 }
 
 #header_pc {
@@ -53,7 +65,6 @@ body {
 
 footer {
     width: 95%;
-    height: 200px;
     background: rgba(136, 136, 136, 0.3);
     box-shadow: 0 8px 32px 0 rgba(58, 58, 58, 0.41);
     backdrop-filter: blur( 7.5px );
