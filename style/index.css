@@ -8,6 +8,8 @@ footer, main, header {
     position: static;
 }
 
+/* Настройка меню для пк */
+
 #header_pc img {
     margin-right: 20px;
 }
@@ -65,6 +67,7 @@ footer, main, header {
     transform: scale(110%);
 }
 
+/* Настройка меню для телефонов */
 
 #header_phone ul{
     display: flex;
@@ -73,10 +76,10 @@ footer, main, header {
     left: 0;
     flex-direction: column;
     width: 100%;
-    z-index: 1;
+    z-index: 3;
     margin: 0;
     padding: 0;
-    gap:10px;
+    gap: 20px;
     transition: 0.5s ease;
 
     background: rgba( 255, 255, 255, 0.3);
@@ -99,8 +102,8 @@ footer, main, header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
 
     background: rgba( 255, 255, 255, 0.15 );
     backdrop-filter: blur( 5px );
@@ -111,7 +114,7 @@ footer, main, header {
     position: fixed;
     top:5%;
     left: 5%;
-    z-index: 2;
+    z-index: 4;
     cursor: pointer;
     transition: 0.3s ease;
 }
@@ -135,8 +138,8 @@ footer, main, header {
 
 #header_phone #menu_btn span {
     position: fixed;
-    width: 40px;
-    height: 4px;
+    width: 70px;
+    height: 8px;
     background-color: black;
     border-radius: 20px;
 
@@ -147,9 +150,9 @@ footer, main, header {
     content: "";
     display: block;
     position: absolute;
-    top:-12px;
-    width: 40px;
-    height: 4px;
+    top:-22px;
+    width: 70px;
+    height: 8px;
     background-color: black;
     border-radius: 20px;
     transition: 0.3s ease;
@@ -159,9 +162,9 @@ footer, main, header {
     content: "";
     display: block;
     position: absolute;
-    top:12px;
-    width: 40px;
-    height: 4px;
+    top:22px;
+    width: 70px;
+    height: 8px;
     background-color: black;
     border-radius: 20px;
     transition: 0.3s ease;
@@ -172,8 +175,8 @@ footer, main, header {
     align-items: center;
     justify-content: center;
     position: relative;
-    height: 80px;
-    font-size: 30pt;
+    padding: 15px;
+    font-size: 40pt;
     transition: 0.3s ease;
     cursor: pointer;
 }
@@ -206,6 +209,8 @@ footer, main, header {
     transform: scale(110%);
 }
 
+/* Настройка адаптивности меню */
+
 @media screen and (max-width: 1000px) {
     #header_pc {
         display: none;
@@ -217,6 +222,8 @@ footer, main, header {
         display: none;
     }
 }
+
+/* Настройка отображения цитаты, заголовка и фото */
 
 #main_section {
     display: flex;
@@ -238,6 +245,7 @@ footer, main, header {
 #main_section div h1 {
     font-size: 35pt;
     text-align: center;
+    position: relative;
 }
 
 #main_section div blockquote {
@@ -259,22 +267,33 @@ footer, main, header {
     filter: drop-shadow(3px 3px 10px black);
 }
 
+/* Настройка отображения основной секции на телефоне */
+
 @media screen and (max-width: 1000px)  {
     #main_section {
         flex-direction: column;
     }
 
     #main_section img {
-        display: none;
+        position: absolute;
+        width: 90%;
+        height: 80%;
+        top: 15%;
+        margin: auto;
+        z-index: 0;
+        opacity: 0.2;
     }
 
     #main_section div blockquote {
-        width: 70%;
-        font-size: 18pt;
+        font-size: 20pt;
+        padding: 20px;
+        width: 89%;
+        z-index: 1;
     }
 
     #main_section div h1 {
-        font-size: 40pt;
+        font-size: 55pt;
+        z-index: 1;
     }
 
     main {
@@ -286,22 +305,23 @@ footer, main, header {
     }
 }
 
+/* Настройка отображения категорий по науке*/
 
 #chapters {
     margin-top: 5%;
     display: flex;
     justify-content: space-evenly;
     margin-bottom: 5%;
-    /*gap: 20px;*/
+    flex-wrap: wrap;
 }
-
 
 .card {
     position: relative;
     display: flex;
+    height: 400px;
+    width: 400px;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
     cursor: pointer;
 }
 
@@ -310,25 +330,7 @@ footer, main, header {
     transform: skewX(0);
 }
 
-.card:active .back
-{
-    transform: skewX(0);
-}
-
-.card:focus .back
-{
-    transform: skewX(0);
-}
-
 .card:hover .card_content {
-    transform: scale(105%);
-}
-
-.card:active .card_content {
-    transform: scale(105%);
-}
-
-.card:focus .card_content {
     transform: scale(105%);
 }
 
@@ -340,25 +342,12 @@ footer, main, header {
     animation-play-state: running;
 }
 
-.card:active .card_content::before,
-.card:active .card_content::after
-{
-    visibility: visible;
-    opacity: 1;
-    animation-play-state: running;
-}
-
-.card:focus .card_content::before,
-.card:focus .card_content::after
-{
-    visibility: visible;
-    opacity: 1;
-    animation-play-state: running;
-}
-
 .back {
     width: 150px;
     height: 400px;
+    position: absolute;
+    margin: auto;
+    left: 125px;
     background: rgb(255,192,0);
     background: linear-gradient(180deg, rgba(255,192,0,1) 0%, rgba(227,78,4,1) 100%);
     filter: blur(3px);
@@ -368,7 +357,6 @@ footer, main, header {
 }
 
 .card_content {
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -385,6 +373,18 @@ footer, main, header {
     transition: 0.5s;
     border-radius: 20px;
     border: 2px solid rgba( 255, 255, 255, 0.18 );
+}
+
+/* Настройка карточки для отображения на телефоне */
+
+@media screen and (max-width: 1000px) {
+    .card_content {
+        font-size: 30pt;
+    }
+
+    #chapters {
+        gap: 40px;
+    }
 }
 
 @keyframes moving_block {
@@ -423,14 +423,13 @@ footer, main, header {
     }
 }
 
+.card_content::before,
 .card_content::after {
-    content: "";
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    top: 230px;
-    transition: 0.5s;
-    left: 95%;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
     display: block;
     width: 80px;
     height: 80px;
@@ -439,39 +438,23 @@ footer, main, header {
     -webkit-backdrop-filter: blur( 10px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+    content: "";
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    transition: 0.5s;
+}
 
+.card_content::after {
+    top: 230px;
+    left: 95%;
     animation-name: moving_block_reverse;
-    animation-duration: 5s;
-    animation-timing-function: ease;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-play-state: paused;
 }
 
 .card_content::before {
-    content: "";
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
     top:-130px;
-    transition: 0.5s;
     left: -10%;
-    display: block;
-    width: 80px;
-    height: 80px;
-    background: rgba( 255, 255, 255, 0.2 );
-
-    backdrop-filter: blur( 10px );
-    -webkit-backdrop-filter: blur( 10px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-
     animation-name: moving_block;
-    animation-duration: 5s;
-    animation-timing-function: ease;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-play-state: paused;
 }
 
 .card:hover {
@@ -494,13 +477,7 @@ footer, main, header {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00a9e9",endColorstr="#005480",GradientType=1);
 }
 
-@media screen and (max-width: 1000px) {
-    #chapters {
-        align-items: center;
-        gap: 40px;
-        flex-direction: column;
-    }
-}
+/* Настройка разделов со странами */
 
 #countries {
     width: 90%;
@@ -556,33 +533,31 @@ footer, main, header {
 
 .theme_btn > div {
     position: relative;
-    width: 100px;
-    height: 32px;
+    width: 200px;
+    height: 64px;
     background-color: white;
-    /*padding:5px;*/
     border: 2px solid rgba( 255, 255, 255, 0.18 );
     transition: 0.5s ease;
     padding: 5px;
-    border-radius: 30px;
+    border-radius: 50px;
     cursor: pointer;
-
     -webkit-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.46) inset;
     -moz-box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.46) inset;
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.46) inset;
 }
 
-.theme_btn .sun {
-    position: absolute;
-    top: 5px;
-    left: calc(100% - 37px);
-    z-index: 0;
-}
-
+.theme_btn .sun,
 .theme_btn .moon {
     position: absolute;
     top: 5px;
     z-index: 0;
     left: 5px;
+    width: 64px;
+    height: 64px;
+}
+
+.theme_btn .sun {
+    left: calc(100% - 72px);
 }
 
 .theme_btn .round {
@@ -592,11 +567,11 @@ footer, main, header {
     align-items: center;
     top: 4px;
     left: 5px;
-    width: 32px;
-    height: 32px;
+    width: 64px;
+    height: 64px;
     background-color: white;
     z-index: 0;
-    border-radius: 20px;
+    border-radius: 50px;
     transition: 0.5s ease;
 
     -webkit-box-shadow: 0px 3px 5px 4px rgba(0, 0, 0, 0.42);
@@ -605,8 +580,8 @@ footer, main, header {
 }
 
 .theme_btn .round_in {
-    width: 13px;
-    height: 13px;
+    width: 26px;
+    height: 26px;
     border-style: solid;
     transition: 0.5s ease;
     border-radius: 20px;
@@ -615,7 +590,7 @@ footer, main, header {
 
 #theme_check:checked ~ .theme_btn .round,
 #theme_check1:checked ~ .theme_btn .round{
-    left: calc(100% - 37px);
+    left: calc(100% - 72px);
     background-color: #c4c4c4;
     -webkit-box-shadow: -2px 0px 5px 4px rgba(0, 0, 0, 0.42);
     -moz-box-shadow: -2px 0px 5px 4px rgba(0, 0, 0, 0.42);
@@ -636,13 +611,46 @@ footer, main, header {
 
 main .dark_theme {
     margin-top: 10px;
-    margin-left: calc(95% - 100px);
+    margin-left: calc(95% - 200px);
 }
+
+/* Настройка отображения переключателя на телефоне */
 
 @media screen and (min-width: 1000px){
     main .dark_theme {
         display: none;
     }
+
+    .theme_btn > div {
+        width: 100px;
+        height: 32px;
+    }
+
+    .theme_btn .sun,
+    .theme_btn .moon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .theme_btn .sun {
+        left: calc(100% - 37px);
+    }
+
+    .theme_btn .round {
+        width: 32px;
+        height: 32px;
+    }
+
+    .theme_btn .round_in {
+        width: 13px;
+        height: 13px;
+    }
+
+    #theme_check:checked ~ .theme_btn .round,
+    #theme_check1:checked ~ .theme_btn .round {
+        left: calc(100% - 37px);
+    }
+
 }
 
 /* Настройка ссылок футера */
@@ -670,7 +678,7 @@ main .dark_theme {
     background: rgba( 255, 255, 255, 0.05 );
     backdrop-filter: blur( 2.5px );
     -webkit-backdrop-filter: blur( 2.5px );
-    border-radius: 50px;
+    border-radius: 70px;
     border: 2px solid rgba( 255, 255, 255, 0.18 );
 }
 
@@ -739,14 +747,25 @@ main .dark_theme {
     left: 0;
     width: 100%;
     height: 150%;
-    background: rgba( 255, 255, 255, 0 );
-    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+    background: rgba( 255, 255, 255, 0.0 );
     backdrop-filter: blur( 10px );
     -webkit-backdrop-filter: blur( 5px );
-    z-index: 2;
+    z-index: 5;
     opacity: 0;
     visibility: hidden;
     transition: 0.2s;
+}
+
+@media screen and (max-width: 1000px) {
+    #links li {
+        width: 120px;
+        height: 120px;
+    }
+
+    #links img {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 /* Настройка отображения формы */
@@ -763,7 +782,7 @@ main .dark_theme {
     -webkit-backdrop-filter: blur( 11px );
     border-radius: 10px;
     border: 2px solid rgba( 255, 255, 255, 0.18 );
-    z-index: 4;
+    z-index: 5;
     visibility: hidden;
     opacity: 0;
     display: flex;
@@ -789,13 +808,13 @@ main .dark_theme {
     height: 100px;
     top: 50%;
     left: calc(50% - 290px);
-    z-index: 4;
+    z-index: 6;
 }
 
 #cube2 {
     width: 70px;
     height: 70px;
-    top: 60%;
+    top: calc(50% + 40px);
     left: calc(50% + 198px);
     z-index: 3;
 }
@@ -803,7 +822,7 @@ main .dark_theme {
 #cube3 {
     width: 90px;
     height: 90px;
-    top: 20%;
+    top: calc(50% - 220px);
     left: calc(50% + 220px);
     z-index: 3;
 }
@@ -811,7 +830,7 @@ main .dark_theme {
 #cube4 {
     width: 50px;
     height: 50px;
-    top: 10%;
+    top: calc(50% - 360px);
     left: calc(50%  - 60px);
     z-index: 3;
 }
@@ -819,7 +838,7 @@ main .dark_theme {
 #cube5 {
     width: 40px;
     height: 40px;
-    top: 87%;
+    top: calc(50% + 350px);
     left: calc(50%  + 60px);
     z-index: 3;
 }
@@ -937,6 +956,14 @@ main .dark_theme {
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
+@media screen and (max-width: 1000px) {
+    #open_btn1 p {
+        width: 400px;
+        height: 60px;
+        font-size: 26pt;
+    }
+}
+
 #open_btn1 p:hover {
     background: rgba( 255, 255, 255, 0.5 );
     transform: scale(102%);
@@ -965,7 +992,7 @@ main .dark_theme {
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    z-index: 3;
+    z-index: 5;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -976,7 +1003,8 @@ main .dark_theme {
     opacity: 0;
 }
 
-#close_btn span{
+#close_btn span,
+#close_btn span::before {
     width: 35px;
     height: 5px;
     background-color: black;
@@ -988,11 +1016,23 @@ main .dark_theme {
     display: block;
     position: absolute;
     content: "";
-    width: 35px;
-    height: 5px;
-    background-color: black;
     transform: rotate(-90deg);
-    border-radius: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+    #close_btn {
+        top: 120px;
+        background: rgba( 255, 0, 0, 0.7 );
+        left: 4%;
+        width: 100px;
+        height: 100px;
+    }
+
+    #close_btn span,
+    #close_btn span::before {
+        width: 70px;
+        height: 10px;
+    }
 }
 
 #open_check:checked ~ #close_btn:hover {
@@ -1001,11 +1041,6 @@ main .dark_theme {
 
 #open_check:checked ~ #close_btn {
     transform: scale(100%);
-    visibility: visible;
-    opacity: 1;
-}
-
-#open_check:checked ~ .cube {
     visibility: visible;
     opacity: 1;
 }
@@ -1153,14 +1188,37 @@ main .dark_theme {
     }
 
     .cards {
-        width: 330px;
-        height: 430px;
+        width: 400px;
+        height: 500px;
         margin-bottom: 5%;
     }
 
     .cards .cards_back {
-        width: 300px;
-        height: 400px;
+        width: 400px;
+        height: 500px;
+        filter: brightness(1);
+    }
+
+    .cards::before {
+        display: none;
+    }
+
+    .cards p {
+        font-size: 23pt;
+        width: 90%;
+    }
+
+    .cards h1 {
+        top: 5%;
+        left: 70%;
+        font-size: 60pt;
+        color: rgba(48, 76, 253, 1);
+    }
+
+    .cards h2 {
+        color: rgb(0, 39, 222);
+        top:80%;
+        font-size: 30pt;
     }
 }
 
