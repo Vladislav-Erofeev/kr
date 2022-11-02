@@ -337,6 +337,7 @@ footer, main, header {
 {
     visibility: visible;
     opacity: 1;
+    animation-play-state: running;
 }
 
 .card:active .card_content::before,
@@ -344,6 +345,7 @@ footer, main, header {
 {
     visibility: visible;
     opacity: 1;
+    animation-play-state: running;
 }
 
 .card:focus .card_content::before,
@@ -351,6 +353,7 @@ footer, main, header {
 {
     visibility: visible;
     opacity: 1;
+    animation-play-state: running;
 }
 
 .back {
@@ -442,6 +445,7 @@ footer, main, header {
     animation-timing-function: ease;
     animation-direction: alternate;
     animation-iteration-count: infinite;
+    animation-play-state: paused;
 }
 
 .card_content::before {
@@ -467,6 +471,7 @@ footer, main, header {
     animation-timing-function: ease;
     animation-direction: alternate;
     animation-iteration-count: infinite;
+    animation-play-state: paused;
 }
 
 .card:hover {
@@ -537,60 +542,6 @@ footer, main, header {
 
 .country:hover {
     transform: scale(110%);
-}
-
-.country:nth-child(1):hover {
-    z-index: 3;
-}
-
-.country:nth-child(1):hover ~ .back_blur {
-    visibility: visible;
-    opacity: 1;
-}
-
-.country:nth-child(2):hover {
-    z-index: 3;
-}
-
-.country:nth-child(2):hover ~ .back_blur {
-    visibility: visible;
-    opacity: 1;
-}
-
-.country:nth-child(3):hover {
-    z-index: 3;
-}
-
-.country:nth-child(3):hover ~ .back_blur {
-    visibility: visible;
-    opacity: 1;
-}
-
-.country:nth-child(4):hover {
-    z-index: 3;
-}
-
-.country:nth-child(4):hover ~ .back_blur {
-    visibility: visible;
-    opacity: 1;
-}
-
-.country:nth-child(5):hover {
-    z-index: 3;
-}
-
-.country:nth-child(5):hover ~ .back_blur {
-    visibility: visible;
-    opacity: 1;
-}
-
-.country:nth-child(6):hover {
-    z-index: 3;
-}
-
-.country:nth-child(6):hover ~ .back_blur {
-    visibility: visible;
-    opacity: 1;
 }
 
 /*настройка кнопки для изменения темы сайта*/
@@ -837,7 +788,8 @@ main .dark_theme {
     width: 100px;
     height: 100px;
     top: 50%;
-    left: -22%;
+    left: calc(50% - 290px);
+    z-index: 4;
 }
 
 #cube2 {
@@ -877,6 +829,7 @@ main .dark_theme {
     opacity: 0;
     transition: 0.5s ease;
     animation-name: moving_block_form;
+    animation-play-state: paused;
     animation-direction: alternate;
     animation-iteration-count: infinite;
     animation-duration: 10s;
@@ -890,6 +843,10 @@ main .dark_theme {
     border-radius: 10px;
     border: 2px solid rgba( 255, 255, 255, 0.18 );
     position: fixed;
+}
+
+#open_check:checked ~ .cube {
+    animation-play-state: running;
 }
 
 #form input[type="text"],
