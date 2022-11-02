@@ -1021,7 +1021,7 @@ main .dark_theme {
 
 @media screen and (max-width: 1000px) {
     #close_btn {
-        top: 120px;
+        top: 5%;
         background: rgba( 255, 0, 0, 0.7 );
         left: 4%;
         width: 100px;
@@ -1032,6 +1032,51 @@ main .dark_theme {
     #close_btn span::before {
         width: 70px;
         height: 10px;
+    }
+
+    #form {
+        width: 70%;
+        left: calc(50% - 35%);
+        height: 600px;
+        top: calc(50% - 300px);
+    }
+
+    #form input[type="text"],
+    #form input[type="email"] {
+        width: 75%;
+        height: 50px;
+        font-size: 16pt;
+    }
+
+    #form textarea {
+        width: 75%;
+        height: 250px;
+    }
+
+    #btn {
+        width: 75%;
+        height: 40px;
+        font-size: 16pt;
+    }
+
+    #form h1 {
+        font-size: 35pt;
+    }
+
+    #cube1 {
+        left: 6%;
+    }
+
+    #cube2 {
+        left: 85%;
+    }
+
+    #cube3 {
+        left: 87%;
+    }
+
+    #cube4 {
+        top: calc(50% - 400px);
     }
 }
 
