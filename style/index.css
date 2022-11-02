@@ -1065,211 +1065,146 @@ main .dark_theme {
 
 /* Настройка карточек */
 
-@media screen and (max-width: 1000px) {
-    #card {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
 #card {
     display: flex;
+    width: 100%;
     justify-content: center;
     gap: 5%;
-    margin-top: 5%;
     margin-bottom: 5%;
-}
-
-/* Анимация лучей */
-
-@keyframes ray {
-    from {
-        border-left-style: solid;
-        border-top-style: solid;
-        width: 0;
-        height: 0;
-        top: 100%;
-    }
-
-    25%{
-        top: 0;
-        width: 0;
-        height: 100%;
-        border-right-style: none;
-        border-left-style: solid;
-    }
-
-    49% {
-        height: 0;
-        border-right-style: none;
-        border-left-style: solid;
-    }
-
-    50% {
-        top: 0;
-        width: 100%;
-        height: 0%;
-        border-left-style: none;
-        border-right-style: solid;
-        left: 0;
-    }
-
-    69% {
-        border-top-style: solid;
-        border-bottom-style: none;
-        left: 100%;
-        width: 0;
-    }
-
-    70% {
-        width: 0%;
-        left: 100%;
-        top:0;
-        height: 100%;
-        border-left-style: none;
-        border-right-style: solid;
-        border-top-style: none;
-        border-bottom-style: solid;
-    }
-
-    85% {
-        width: 100%;
-        left: 0;
-        height: 0;
-        top: 100%;
-        border-left-style: none;
-        border-right-style: solid;
-        border-top-style: none;
-        border-bottom-style: solid;
-    }
-
-    100% {
-        top: 100%;
-        width: 0;
-        left: 0;
-        height: 0;
-        border-left-style: none;
-        border-right-style: solid;
-        border-top-style: none;
-        border-bottom-style: solid;
-    }
 }
 
 /* Стиль карточки */
 
-.cards {
+@keyframes rotation {
+    from {
+        transform: rotate(-45deg);
+    }
+
+    to {
+        transform: rotate(315deg);
+    }
+}
+
+.cards .cards_back{
     width: 200px;
     height: 300px;
-    margin-top: 5%;
-
-    background: rgb(2,115,163);
-    background: -moz-linear-gradient(45deg, rgba(2,115,163,0.3) 0%, rgba(7,165,255,0.3) 63%);
-    background: -webkit-linear-gradient(45deg, rgba(2,115,163,0.3) 0%, rgba(7,165,255,0.3) 63%);
-    background: linear-gradient(45deg, rgba(2,115,163,0.3) 0%, rgba(7,165,255,0.3) 63%);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 6.5px );
-    -webkit-backdrop-filter: blur( 6.5px );
-
-    position: relative;
+    transition: 0.4s ease;
+    background: rgb(108,174,252);
+    background: -moz-linear-gradient(225deg, rgba(108,174,252,1) 0%, rgba(4,92,251,1) 78%);
+    background: -webkit-linear-gradient(225deg, rgba(108,174,252,1) 0%, rgba(4,92,251,1) 78%);
+    background: linear-gradient(225deg, rgba(108,174,252,1) 0%, rgba(4,92,251,1) 78%);
     display: flex;
     padding: 10px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    filter: brightness(0.8);
+    z-index: 2;
+    backdrop-filter: blur( 6.5px );
+}
+
+.cards:hover .cards_back {
+    filter: brightness(1);
+}
+
+.cards p, .cards h1 {
+    text-align: center;
+    margin: 0;
+}
+
+.cards {
+    width: 230px;
+    height: 330px;
+    background: rgb(44, 89, 185);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
     transition: 0.4s ease;
 }
 
-.cards p {
-    text-align: center;
-    margin: 0;
-    font-size: 14pt;
+.cards:hover {
+    background: rgba(2,61,186,1);
+}
+
+.cards::before {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 130%;
+    background-color: rgb(51, 153, 255);
+    filter: blur(10px);
+    position: absolute;
+    transition: 0.4s ease;
+    z-index: 1;
+    transform: rotate(-45deg);
+    visibility: hidden;
+    opacity: 0;
+    animation-name: rotation;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+
+.cards:hover::before {
+    visibility: visible;
+    opacity: 1;
+    animation-play-state: running;
 }
 
 .cards h1 {
     position: absolute;
-    top: 5%;
+    top: 25%;
     left: 70%;
-    font-size: 40pt;
+    font-size: 45pt;
     color: rgba(48, 76, 253, 0.36);
     transition: 0.4s ease;
 }
 
+.cards p {
+    font-size: 14pt;
+    z-index: 1;
+}
+
 .cards h2 {
     color: rgba(48, 76, 253, 0.0);
-    /*transform: scale(0);*/
     transition: 0.4s ease;
     position: absolute;
     top:80%
 }
 
-.cards:hover h2 {
-    /*transform: scale(100%);*/
+.cards:hover h1{
+    top: 5%;
     color: rgba(48, 76, 253, 1);
 }
 
 .cards:hover {
     transform: scale(110%);
-    background: -moz-linear-gradient(45deg, rgba(2,115,163,1) 0%, rgba(7,165,255,1) 63%);
-    background: -webkit-linear-gradient(45deg, rgba(2,115,163,1) 0%, rgba(7,165,255,1) 63%);
-    background: linear-gradient(45deg, rgb(2, 115, 163) 0%, rgb(7, 165, 255) 63%);
 }
 
-.cards:hover h1 {
-    top: -5%;
-    color: rgba(48, 76, 253, 0.8);
+.cards:hover h2 {
+    color: rgb(0, 39, 222);
 }
 
-.cards:hover p::before,
-.cards:hover p::after {
-    visibility: visible;
-    opacity: 1;
-}
+@media screen and (max-width: 1000px) {
+    #card {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .cards {
+        width: 330px;
+        height: 430px;
+        margin-bottom: 5%;
+    }
 
-
-.cards p::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top:100%;
-    left: 0;
-    border-color: rgb(0,29,158);
-    filter: blur(2px);
-    width: 0;
-    height: 0;
-    border-left-style: none;
-    border-top-style: none;
-    visibility: hidden;
-    opacity: 0;
-
-    animation-name: ray;
-    animation-duration: 22s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
-}
-
-.cards p::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top:100%;
-    left: 0;
-    width: 0;
-    border-color: rgb(0,29,158);
-    filter: blur(2px);
-    height: 0;
-    border-left-style: none;
-    border-top-style: none;
-    visibility: hidden;
-    opacity: 0;
-
-    animation-name: ray;
-    animation-direction: reverse;
-    animation-duration: 22s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
+    .cards .cards_back {
+        width: 300px;
+        height: 400px;
+    }
 }
 
 /* Настройка текста на странице */
