@@ -44,6 +44,10 @@ body {
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 }
 
+#form h1 {
+    color: black;
+}
+
 #header_pc {
     width: 95%;
     background: rgba( 255, 255, 255, 0.4 );

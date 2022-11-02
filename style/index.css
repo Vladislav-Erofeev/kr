@@ -1045,7 +1045,8 @@ main .dark_theme {
     #form input[type="email"] {
         width: 75%;
         height: 50px;
-        font-size: 16pt;
+        font-size: 20pt;
+        color: black;
     }
 
     #form textarea {
@@ -1057,10 +1058,12 @@ main .dark_theme {
         width: 75%;
         height: 40px;
         font-size: 16pt;
+        color: black;
     }
 
     #form h1 {
         font-size: 35pt;
+        text-align: center;
     }
 
     #cube1 {

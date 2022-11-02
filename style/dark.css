@@ -47,6 +47,10 @@ body {
     filter: invert(100%);
 }
 
+#form h1 {
+    color: white;
+}
+
 #header_pc {
     width: 95%;
     background: rgba(136, 136, 136, 0.3);
