@@ -10,6 +10,15 @@ body {
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 }
 
+#header_pc a,
+#header_phone a {
+    color: black;
+}
+
+#main nav ul li::before {
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+
 #header_phone #menu_btn {
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 }
@@ -49,76 +58,26 @@ body {
 }
 
 #header_pc {
-    width: 95%;
     background: rgba( 255, 255, 255, 0.4 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    /*backdrop-filter: blur( 7.5px );*/
-    /*-webkit-backdrop-filter: blur( 7.5px );*/
-    border-radius: 20px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 5px;
 }
 
 footer {
-    position: static;
-    width: 95%;
     background: rgba( 255, 255, 255, 0.4 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    /*backdrop-filter: blur( 7.5px );*/
-    /*-webkit-backdrop-filter: blur( 7.5px );*/
     border-radius: 20px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 main {
-    width: 95%;
     background: rgba( 255, 255, 255, 0.4 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    /*backdrop-filter: blur( 7.5px );*/
-    /*-webkit-backdrop-filter: blur( 7.5px );*/
-    border-radius: 20px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
-@media screen and (max-width: 1000px) {
-    #header_pc {
-        display: none;
-    }
+#main nav {
+    background: rgba( 255, 255, 255, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-
-@media screen and (min-width: 1000px) {
-    #header_phone {
-        display: none;
-    }
-}
-
-/*@media screen and (max-width: 1000px)  {*/
-/*    #main_section {*/
-/*        flex-direction: column;*/
-/*    }*/
-
-/*    #main_section img {*/
-/*        display: none;*/
-/*    }*/
-
-/*    #main_section div blockquote {*/
-/*        width: 70%;*/
-/*        font-size: 18pt;*/
-/*    }*/
-
-/*    #main_section div h1 {*/
-/*        font-size: 40pt;*/
-/*    }*/
-
-/*    main {*/
-/*        width: 100%;*/
-/*    }*/
-
-/*    footer {*/
-/*        width: 100%;*/
-/*    }*/
-/*}*/

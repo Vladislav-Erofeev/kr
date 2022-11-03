@@ -1,0 +1,180 @@
+#main {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+main {
+    flex-grow: 30;
+    border-radius: 20px;
+}
+
+main h1 {
+    font-size: 30pt;
+    text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+    main h1 {
+        font-size: 60pt;
+    }
+}
+
+/* Настройка навигации по разделам */
+
+#main nav {
+    flex-grow: 1;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+#main nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20pt;
+    margin-top: 30px;
+    padding: 10px;
+    padding-bottom: 100px;
+    overflow: hidden;
+}
+
+#main nav ul li {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    position: relative;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+#main nav ul li::before {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur(1px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    transform: scale(0);
+    transition: 0.3s ease-in-out;
+}
+
+#main nav ul li:hover::before {
+    transform: scale(100%);
+}
+
+#main nav ul li:hover {
+    transform: scale(115%);
+}
+
+@media screen and (max-width: 1000px) {
+    #main {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    footer {
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    #main nav ul {
+        flex-direction: row;
+        padding: 5px;
+        gap: 20px;
+        overflow: visible;
+        justify-content: end;
+        font-size: 25pt;
+    }
+}
+
+/* Стиль карточки */
+.card {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    perspective: 1000px;
+    border-radius: 20px;
+}
+
+.card .front_side,
+.card .back_side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    backface-visibility: hidden;
+    transition: 0.5s ease-in-out;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(96, 96, 96, 0.37);
+}
+
+.card .front_side {
+    background-color: white;
+}
+
+.card .back_side {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    transform: rotateY(180deg);
+}
+
+.card .back_side h1 {
+    text-align: center;
+    font-size: 30pt;
+}
+
+.card .back_side h2 {
+    font-size: 15pt;
+    margin-top: -25px;
+}
+
+.card .back_side p {
+    font-size: 15pt;
+    margin-top: 10px;
+}
+
+.card:hover .front_side {
+    transform: rotateY(180deg);
+}
+
+.card:hover .back_side {
+    transform: rotateY(360deg);
+}
+
+@media screen and (max-width: 1000px) {
+    .card .back_side h2,
+    .card .back_side p{
+        font-size: 20pt;
+        text-align: center;
+    }
+}
+
+#cards {
+    display: flex;
+    margin: auto;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap:40px
+}
