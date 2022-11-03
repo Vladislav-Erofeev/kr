@@ -126,6 +126,7 @@ main h1 {
     transition: 0.5s ease-in-out;
     border-radius: 20px;
     box-shadow: 0 8px 32px 0 rgba(96, 96, 96, 0.37);
+    overflow: hidden;
 }
 
 .card .front_side {
