@@ -162,6 +162,22 @@ main h1 {
     transform: rotateY(360deg);
 }
 
+.card:active .front_side {
+    transform: rotateY(180deg);
+}
+
+.card:active .back_side {
+    transform: rotateY(360deg);
+}
+
+.card:focus .front_side {
+    transform: rotateY(180deg);
+}
+
+.card:focus .back_side {
+    transform: rotateY(360deg);
+}
+
 @media screen and (max-width: 1000px) {
     .card .back_side h2,
     .card .back_side p{
