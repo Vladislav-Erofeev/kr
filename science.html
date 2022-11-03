@@ -53,10 +53,11 @@
 
         <nav>
             <ul>
-                <li>Физика</li>
-                <li>Химия</li>
-                <li>Математика</li>
-                <li>Биология</li>
+                <li class="button" data-filter="physic">Физика</li>
+                <li class="button" data-filter="chemistry">Химия</li>
+                <li class="button" data-filter="math">Математика</li>
+                <li class="button" data-filter="bio">Биология</li>
+                <li class="button" data-filter="all">Показать всех</li>
             </ul>
         </nav>
 
@@ -78,7 +79,7 @@
 
             <section id="cards">
 
-                <div class="card">
+                <div class="card physic chemistry">
                     <div class="front_side"><img src="pictures/science/lomonosov.jpg" width="300" height="400"></div>
                     <div class="back_side">
                         <h1>Михаил Васильевич Ломоносов</h1>
@@ -87,7 +88,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card physic chemistry">
                     <div class="front_side"><img src="pictures/science/curie.png" width="300" height="400"></div>
                     <div class="back_side">
                         <h1>Мария Склодовская-Кюри</h1>
@@ -96,7 +97,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card math physic">
                     <div class="front_side"><img src="pictures/science/kovalevskaya.jpg" width="300" height="400"></div>
                     <div class="back_side">
                         <h1>София Васильевна Ковалевская</h1>
@@ -105,7 +106,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card physic philosophy">
                     <div class="front_side"><img src="pictures/science/Einstein.jpg" width="300" height="400"></div>
                     <div class="back_side">
                         <h1>Альберт Эйнштейн</h1>
@@ -114,7 +115,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card astronomy physic math">
                     <div class="front_side"><img src="pictures/science/newton.jpg" width="300" height="400"></div>
                     <div class="back_side">
                         <h1>Исаак Ньютон</h1>
@@ -123,7 +124,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card physic chemistry">
                     <div class="front_side"><img src="pictures/science/faradei.jpg" width="300" height="400"></div>
                     <div class="back_side">
                         <h1>Майкл Фарадей</h1>
@@ -180,13 +181,6 @@
 </body>
 
 <script>
-    var btn1 = document.getElementById("theme_btn1");
-    var btn2 = document.getElementById("theme_btn2");
-    var link = document.getElementById("theme_link");
-
-    btn1.addEventListener("click", function () { ChangeTheme(); });
-    btn2.addEventListener("click", function () { ChangeTheme(); });
-
     function ChangeTheme()
     {
         let lightTheme = "style/light.css";
@@ -210,6 +204,40 @@
 
         Save(theme);
     }
+
+    var btn1 = document.getElementById("theme_btn1");
+    var btn2 = document.getElementById("theme_btn2");
+    var link = document.getElementById("theme_link");
+
+    btn1.addEventListener("click", function () { ChangeTheme(); });
+    btn2.addEventListener("click", function () { ChangeTheme(); });
+
+    function myapp() {
+        const buttons = document.querySelectorAll(".button");
+        const cards = document.querySelectorAll(".card");
+
+        function filter(category, items) {
+            items.forEach((item) => {
+                const isItemFiltered = !item.classList.contains(category);
+                const isShowAll = category.toLowerCase() === "all";
+                if (isItemFiltered && !isShowAll) {
+                    item.classList.add("hide");
+                } else {
+                    item.classList.remove("hide");
+                }
+            });
+        }
+
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const currentCategory = button.dataset.filter;
+                console.log(currentCategory);
+                filter(currentCategory, cards);
+            });
+        });
+    }
+
+    myapp();
 </script>
 
 </html>

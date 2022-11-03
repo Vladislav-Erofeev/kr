@@ -50,6 +50,7 @@ main h1 {
     position: relative;
     transition: 0.3s ease;
     cursor: pointer;
+    text-align: center;
 }
 
 #main nav ul li::before {
@@ -109,6 +110,7 @@ main h1 {
     position: relative;
     perspective: 1000px;
     border-radius: 20px;
+    margin-bottom: 40px;
 }
 
 .card .front_side,
@@ -195,5 +197,16 @@ main h1 {
     padding: 10px;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    gap:40px
+    gap:40px;
+    width: 80%;
+}
+
+@media screen and (max-width: 1000px) {
+    #cards {
+        width: 97%;
+    }
+}
+
+.hide {
+    display: none;
 }
