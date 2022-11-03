@@ -153,6 +153,8 @@ main h1 {
 .card .back_side p {
     font-size: 15pt;
     margin-top: 10px;
+    text-align: center;
+    width: 90%;
 }
 
 .card:hover .front_side {
