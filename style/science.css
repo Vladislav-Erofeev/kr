@@ -184,11 +184,11 @@ main h1 {
 }
 
 @media screen and (max-width: 1000px) {
-    .card .back_side h2,
-    .card .back_side p{
-        font-size: 20pt;
-        text-align: center;
-    }
+    /*.card .back_side h2,*/
+    /*.card .back_side p{*/
+    /*    font-size: 20pt;*/
+    /*    text-align: center;*/
+    /*}*/
 }
 
 #cards {
@@ -198,12 +198,33 @@ main h1 {
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap:40px;
-    width: 80%;
+    width: 85%;
 }
 
 @media screen and (max-width: 1000px) {
     #cards {
         width: 97%;
+    }
+
+    .card {
+        width: 500px;
+        height: 600px;
+        border-radius: 30px;
+    }
+
+    .card img {
+        width: 500px;
+        height: 600px;
+    }
+
+    .card .back_side h1 {
+        font-size: 40pt;
+    }
+
+    .card .back_side h2,
+    .card .back_side p{
+        font-size: 30pt;
+        text-align: center;
     }
 }
 
