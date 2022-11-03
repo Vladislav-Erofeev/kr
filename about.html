@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Контакты</title>
+    <link rel="icon" href="pictures/logo.png">
+    <link rel="stylesheet" href="style/light.css" id="theme_link">
+    <link rel="stylesheet" href="style/general.css">
+    <link rel="stylesheet" href="style/about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+<div id="main_content">
+    <header id="header_pc">
+        <div class="dark_theme">
+            <input type="checkbox" id="theme_check">
+            <label class="theme_btn" for="theme_check" id="theme_btn1">
+                <div>
+                    <img src="pictures/sun.png" width="32" height="32" class="sun">
+                    <img src="pictures/moon.png" width="32" height="32" class="moon">
+                    <div class="round">
+                        <div class="round_in"></div>
+                    </div>
+
+                </div>
+            </label>
+        </div>
+
+        <ul>
+            <a href="index.html"><li>Главная</li></a>
+            <a href="science.html"><li>Учёные</li></a>
+            <a href="about.html"><li>Контакты</li></a>
+        </ul>
+
+        <img src="pictures/logo.png" width="64" height="72">
+    </header>
+
+    <header id="header_phone">
+        <input type="checkbox" id="menu_check">
+        <label for="menu_check" id="menu_btn">
+            <span></span>
+        </label>
+
+        <ul>
+            <a href="index.html"><li>Главная</li></a>
+            <a href="science.html"><li>Учёные</li></a>
+            <a href="about.html"><li>Контакты</li></a>
+        </ul>
+    </header>
+
+    <main>
+        <div class="dark_theme">
+            <input type="checkbox" id="theme_check1">
+            <label class="theme_btn" for="theme_check1" id="theme_btn2">
+                <div>
+                    <img src="pictures/sun.png" width="32" height="32" class="sun">
+                    <img src="pictures/moon.png" width="32" height="32" class="moon">
+                    <div class="round">
+                        <div class="round_in"></div>
+                    </div>
+                </div>
+            </label>
+        </div>
+
+        <h1>Контактная информация</h1>
+
+        <section id="main">
+            <div id="contacts">
+                <div class="data">
+                    <h1>ФИО</h1>
+                    <div class="line"></div>
+                    <p>Ерофеев Владислав Сергеевич</p>
+                </div>
+
+                <div class="data">
+                    <h1>Номер телефона</h1>
+                    <div class="line"></div>
+                    <p>8(9652)-224-99-76</p>
+                </div>
+
+                <div class="data">
+                    <h1>Почтовый адрес</h1>
+                    <div class="line"></div>
+                    <p>20031911@mail.ru</p>
+                </div>
+
+                <div class="data">
+                    <h1>Адрес</h1>
+                    <div class="line"></div>
+                    <p>пр-т Вернадского 78</p>
+                </div>
+            </div>
+
+            <div style="position:relative;overflow:hidden;" id="map"><a href="https://yandex.ru/maps/org/rtu_mirea/1084832794/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">РТУ МИРЭА</a><a href="https://yandex.ru/maps/213/moscow/category/university_college/184106140/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">ВУЗ в Москве</a><iframe src="https://yandex.ru/map-widget/v1/-/CCU6F4rTgD" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+        </section>
+    </main>
+
+    <footer>
+        <ul id="links">
+            <a href="https://vk.com/feed" target="_blank"><li><img src="logo/vk.png" width="30" height="30"></li></a>
+            <a href="https://discord.com/" target="_blank"><li><img src="logo/dis.png" width="35" height="30"></li></a>
+            <a href="https://www.instagram.com" target="_blank"><li><img src="logo/inst.png" width="30" height="30"></li></a>
+            <a href="https://web.telegram.org/k/" target="_blank"><li><img src="logo/telegram.png" width="30" height="30"></li></a>
+            <a href="https://github.com/Vladislav-Erofeev" target="_blank"><li><img src="logo/gh.png" width="30" height="30"></li></a>
+        </ul>
+
+        <input type="checkbox" id="open_check">
+        <label for="open_check" id="open_btn1">
+            <p>Нашли ошибку?</p>
+        </label>
+
+        <label for="open_check" id="close_btn">
+            <span></span>
+        </label>
+
+        <div id = "form">
+            <h1>Отзыв об ошибке</h1>
+            <input id = "name" type="text" placeholder="Имя">
+            <input id = "mail" type="email" placeholder="Почта">
+            <textarea></textarea>
+            <input id="btn" type="submit">
+
+        </div>
+        <div id="cube1" style="--i:0;" class="cube"></div>
+        <div id="cube2" class="cube" style="--i:2;"></div>
+        <div id="cube3" class="cube" style="--i:3;"></div>
+        <div id="cube4" class="cube" style="--i:4;"></div>
+        <div id="cube5" class="cube" style="--i:5;"></div>
+        <div id = "back_blur">
+        </div>
+
+        <div class="back_blur">
+
+        </div>
+    </footer>
+</div>
+
+</body>
+
+<script>
+    function ChangeTheme()
+    {
+        let lightTheme = "style/light.css";
+        let darkTheme = "style/dark.css";
+
+        var currTheme = link.getAttribute("href");
+        var theme = "";
+
+        if(currTheme == lightTheme)
+        {
+            currTheme = darkTheme;
+            theme = "dark";
+        }
+        else
+        {
+            currTheme = lightTheme;
+            theme = "light";
+        }
+
+        link.setAttribute("href", currTheme);
+
+        Save(theme);
+    }
+
+    var btn1 = document.getElementById("theme_btn1");
+    var btn2 = document.getElementById("theme_btn2");
+    var link = document.getElementById("theme_link");
+
+    btn1.addEventListener("click", function () { ChangeTheme(); });
+    btn2.addEventListener("click", function () { ChangeTheme(); });
+</script>
+
+</html>

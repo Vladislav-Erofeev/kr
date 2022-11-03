@@ -183,14 +183,6 @@ main h1 {
     transform: rotateY(360deg);
 }
 
-@media screen and (max-width: 1000px) {
-    /*.card .back_side h2,*/
-    /*.card .back_side p{*/
-    /*    font-size: 20pt;*/
-    /*    text-align: center;*/
-    /*}*/
-}
-
 #cards {
     display: flex;
     margin: auto;
