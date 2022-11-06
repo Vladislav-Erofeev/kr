@@ -15,6 +15,10 @@ body {
     color: white;
 }
 
+#main_science h2::after {
+    background-color: white;
+}
+
 #main nav ul li::before {
     box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
 }
