@@ -134,31 +134,31 @@
 
     <section id="countries">
       <div class="country">
-        <img src="pictures/russia.png" width="300" height="200">
+        <img src="pictures/country/russia.png" width="300" height="200">
         <h1>Россия</h1>
       </div>
 
       <div class="country">
-        <img src="pictures/germany.png" width="300" height="200">
+        <img src="pictures/country/germany.png" width="300" height="200">
         <h1>Германия</h1>
       </div>
 
       <div class="country">
-        <img src="pictures/france.webp" width="300" height="200">
+        <img src="pictures/country/france.webp" width="300" height="200">
         <h1>Франция</h1>
       </div>
 
       <div class="country">
-        <img src="pictures/italy.png" width="300"  height="200">
+        <img src="pictures/country/italy.png" width="300" height="200">
         <h1>Италия</h1>
       </div>
 
       <div class="country">
-        <img src="pictures/usa.webp" width="300" height="200">
+        <img src="pictures/country/usa.webp" width="300" height="200">
         <h1>США</h1>
       </div>
       <div class="country">
-        <img src="pictures/spain.png" width="300" height="200">
+        <img src="pictures/country/spain.png" width="300" height="200">
         <h1>Испания</h1>
       </div>
     </section>
@@ -167,11 +167,11 @@
 
   <footer>
     <ul id="links">
-      <a href="https://vk.com/feed" target="_blank"><li><img src="logo/vk.png" width="30" height="30"></li></a>
-      <a href="https://discord.com/" target="_blank"><li><img src="logo/dis.png" width="35" height="30"></li></a>
-      <a href="https://www.instagram.com" target="_blank"><li><img src="logo/inst.png" width="30" height="30"></li></a>
-      <a href="https://web.telegram.org/k/" target="_blank"><li><img src="logo/telegram.png" width="30" height="30"></li></a>
-      <a href="https://github.com/Vladislav-Erofeev" target="_blank"><li><img src="logo/gh.png" width="30" height="30"></li></a>
+      <a href="https://vk.com/feed" target="_blank"><li><img src="pictures/logo/vk.png" width="30" height="30"></li></a>
+      <a href="https://discord.com/" target="_blank"><li><img src="pictures/logo/dis.png" width="35" height="30"></li></a>
+      <a href="https://www.instagram.com" target="_blank"><li><img src="pictures/logo/inst.png" width="30" height="30"></li></a>
+      <a href="https://web.telegram.org/k/" target="_blank"><li><img src="pictures/logo/telegram.png" width="30" height="30"></li></a>
+      <a href="https://github.com/Vladislav-Erofeev" target="_blank"><li><img src="pictures/logo/gh.png" width="30" height="30"></li></a>
     </ul>
 
     <input type="checkbox" id="open_check">
@@ -207,37 +207,6 @@
 
 </body>
 
-<script>
-  var btn1 = document.getElementById("theme_btn1");
-  var btn2 = document.getElementById("theme_btn2");
-  var link = document.getElementById("theme_link");
-
-  btn1.addEventListener("click", function () { ChangeTheme(); });
-  btn2.addEventListener("click", function () { ChangeTheme(); });
-
-  function ChangeTheme()
-  {
-    let lightTheme = "style/light.css";
-    let darkTheme = "style/dark.css";
-
-    var currTheme = link.getAttribute("href");
-    var theme = "";
-
-    if(currTheme == lightTheme)
-    {
-      currTheme = darkTheme;
-      theme = "dark";
-    }
-    else
-    {
-      currTheme = lightTheme;
-      theme = "light";
-    }
-
-    link.setAttribute("href", currTheme);
-
-    Save(theme);
-  }
-</script>
+<script src="scripts/dark_theme.js"></script>
 
 </html>

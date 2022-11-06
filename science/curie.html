@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Кюри</title>
-  <link rel="icon" href="pictures/logo.png">
-  <link rel="stylesheet" href="style/light.css" id="theme_link">
-  <link rel="stylesheet" href="style/general.css">
-  <link rel="stylesheet" href="style/science_info.css">
+  <link rel="icon" href="../pictures/logo.png">
+  <link rel="stylesheet" href="../style/light.css" id="theme_link">
+  <link rel="stylesheet" href="../style/general.css">
+  <link rel="stylesheet" href="../style/science_info.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
@@ -33,8 +33,8 @@
       <input type="checkbox" id="theme_check">
       <label class="theme_btn" for="theme_check" id="theme_btn1">
         <div>
-          <img src="pictures/sun.png" width="32" height="32" class="sun">
-          <img src="pictures/moon.png" width="32" height="32" class="moon">
+          <img src="../pictures/sun.png" width="32" height="32" class="sun">
+          <img src="../pictures/moon.png" width="32" height="32" class="moon">
           <div class="round">
             <div class="round_in"></div>
           </div>
@@ -44,12 +44,12 @@
     </div>
 
     <ul>
-      <a href="index.html"><li>Главная</li></a>
-      <a href="science.html"><li>Учёные</li></a>
-      <a href="about.html"><li>Контакты</li></a>
+      <a href="../index.html"><li>Главная</li></a>
+      <a href="../science.html"><li>Учёные</li></a>
+      <a href="../about.html"><li>Контакты</li></a>
     </ul>
 
-    <img src="pictures/logo.png" width="64" height="72">
+    <img src="../pictures/logo.png" width="64" height="72">
   </header>
 
   <header id="header_phone">
@@ -59,9 +59,9 @@
     </label>
 
     <ul>
-      <a href="index.html"><li>Главная</li></a>
-      <a href="science.html"><li>Учёные</li></a>
-      <a href="about.html"><li>Контакты</li></a>
+      <a href="../index.html"><li>Главная</li></a>
+      <a href="../science.html"><li>Учёные</li></a>
+      <a href="../about.html"><li>Контакты</li></a>
     </ul>
   </header>
 
@@ -71,8 +71,8 @@
       <input type="checkbox" id="theme_check1">
       <label class="theme_btn" for="theme_check1" id="theme_btn2">
         <div>
-          <img src="pictures/sun.png" width="32" height="32" class="sun">
-          <img src="pictures/moon.png" width="32" height="32" class="moon">
+          <img src="../pictures/sun.png" width="32" height="32" class="sun">
+          <img src="../pictures/moon.png" width="32" height="32" class="moon">
           <div class="round">
             <div class="round_in"></div>
           </div>
@@ -86,7 +86,7 @@
 
       <!-- Описание -->
       <section>
-        <p><img src="pictures/science/curie.png" width="191" height="265" id = "photo">О Марии Склодовской-Кюри известно каждому
+        <p><img src="../pictures/science/curie.png" width="191" height="265" id = "photo">О Марии Склодовской-Кюри известно каждому
           школьнику, изучавшему химию. Эта женщина – ученый с мировым именем, открывшая два химических элемента, радий и полоний. Она два раза стала лауреатом Нобелевской
           премии, что для того времени было исключением из всяких правил. Склодовская-Кюри за свои научные достижения была награждена семью медалями. Она является одним из
           первооткрывателей радиоактивности, автором данного термина.</p>
@@ -232,11 +232,11 @@
 
   <footer>
     <ul id="links">
-      <a href="https://vk.com/feed" target="_blank"><li><img src="logo/vk.png" width="30" height="30"></li></a>
-      <a href="https://discord.com/" target="_blank"><li><img src="logo/dis.png" width="35" height="30"></li></a>
-      <a href="https://www.instagram.com" target="_blank"><li><img src="logo/inst.png" width="30" height="30"></li></a>
-      <a href="https://web.telegram.org/k/" target="_blank"><li><img src="logo/telegram.png" width="30" height="30"></li></a>
-      <a href="https://github.com/Vladislav-Erofeev" target="_blank"><li><img src="logo/gh.png" width="30" height="30"></li></a>
+      <a href="https://vk.com/feed" target="_blank"><li><img src="../pictures/logo/vk.png" width="30" height="30"></li></a>
+      <a href="https://discord.com/" target="_blank"><li><img src="../pictures/logo/dis.png" width="35" height="30"></li></a>
+      <a href="https://www.instagram.com" target="_blank"><li><img src="../pictures/logo/inst.png" width="30" height="30"></li></a>
+      <a href="https://web.telegram.org/k/" target="_blank"><li><img src="../pictures/logo/telegram.png" width="30" height="30"></li></a>
+      <a href="https://github.com/Vladislav-Erofeev" target="_blank"><li><img src="../pictures/logo/gh.png" width="30" height="30"></li></a>
     </ul>
 
     <input type="checkbox" id="open_check">
@@ -271,36 +271,7 @@
 
 </div>
 </body>
-<script>
-  var btn1 = document.getElementById("theme_btn1");
-  var btn2 = document.getElementById("theme_btn2");
-  var link = document.getElementById("theme_link");
 
-  btn1.addEventListener("click", function () { ChangeTheme(); });
-  btn2.addEventListener("click", function () { ChangeTheme(); });
+<script src="dark_theme.js"></script>
 
-  function ChangeTheme()
-  {
-    let lightTheme = "style/light.css";
-    let darkTheme = "style/dark.css";
-
-    var currTheme = link.getAttribute("href");
-    var theme = "";
-
-    if(currTheme == lightTheme)
-    {
-      currTheme = darkTheme;
-      theme = "dark";
-    }
-    else
-    {
-      currTheme = lightTheme;
-      theme = "light";
-    }
-
-    link.setAttribute("href", currTheme);
-
-    Save(theme);
-  }
-</script>
 </html>

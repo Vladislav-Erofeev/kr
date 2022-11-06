@@ -84,7 +84,7 @@
                         <h1>Михаил Васильевич Ломоносов</h1>
                         <h2>19.11.1711 - 15.04.1765</h2>
                         <p>Род деятельности: физика, химия</p>
-                        <a href="lomonosov.html">Подробнее</a>
+                        <a href="science/lomonosov.html">Подробнее</a>
                     </div>
                 </div>
 
@@ -94,47 +94,47 @@
                         <h1>Мария Склодовская-Кюри</h1>
                         <h2>19.11.2003 - 23.11.2002</h2>
                         <p>Род деятельности: физика, химия</p>
-                        <a href="curie.html">Подробнее</a>
+                        <a href="science/curie.html">Подробнее</a>
                     </div>
                 </div>
 
                 <div class="card math physic">
-                    <div class="front_side"><img src="pictures/science/kovalevskaya.jpg" width="300" height="400"></div>
+                    <div class="front_side"><img src="pictures/science/kovalevskaya/kovalevskaya.jpg" width="300" height="400"></div>
                     <div class="back_side">
                         <h1>Софья Васильевна Ковалевская</h1>
                         <h2>15.01.1850 - 10.02.1891</h2>
                         <p>Род деятельности: математика, физика</p>
-                        <a href="kovalevskaya.html">Подробнее</a>
+                        <a href="science/kovalevskaya.html">Подробнее</a>
                     </div>
                 </div>
 
                 <div class="card physic philosophy">
-                    <div class="front_side"><img src="pictures/science/Einstein.jpg" width="300" height="400"></div>
+                    <div class="front_side"><img src="pictures/science/einstein/Einstein.jpg" width="300" height="400"></div>
                     <div class="back_side">
                         <h1>Альберт Эйнштейн</h1>
                         <h2>14.03.1879 - 18.04.1955</h2>
                         <p>Род деятельности: физика, философия</p>
-                        <a href="nothing.html">Подробнее</a>
+                        <a href="science/einstein.html">Подробнее</a>
                     </div>
                 </div>
 
                 <div class="card astronomy physic math">
-                    <div class="front_side"><img src="pictures/science/newton.jpg" width="300" height="400"></div>
+                    <div class="front_side"><img src="pictures/science/newton/newton.jpg" width="300" height="400"></div>
                     <div class="back_side">
                         <h1>Исаак Ньютон</h1>
                         <h2>04.01.1643 - 31.03.1727</h2>
                         <p>Род деятельности: физика, математика, астрономия</p>
-                        <a href="nothing.html">Подробнее</a>
+                        <a href="science/newtone.html">Подробнее</a>
                     </div>
                 </div>
 
                 <div class="card physic chemistry">
-                    <div class="front_side"><img src="pictures/science/faradei.jpg" width="300" height="400"></div>
+                    <div class="front_side"><img src="pictures/science/faradei/faradei.jpg" width="300" height="400"></div>
                     <div class="back_side">
                         <h1>Майкл Фарадей</h1>
                         <h2>22.09.1791 - 25.08.1867</h2>
                         <p>Род деятельности: физика, химия</p>
-                        <a href="nothing.html">Подробнее</a>
+                        <a href="science/faradei.html">Подробнее</a>
                     </div>
                 </div>
 
@@ -146,11 +146,11 @@
 
     <footer>
         <ul id="links">
-            <a href="https://vk.com/feed" target="_blank"><li><img src="logo/vk.png" width="30" height="30"></li></a>
-            <a href="https://discord.com/" target="_blank"><li><img src="logo/dis.png" width="35" height="30"></li></a>
-            <a href="https://www.instagram.com" target="_blank"><li><img src="logo/inst.png" width="30" height="30"></li></a>
-            <a href="https://web.telegram.org/k/" target="_blank"><li><img src="logo/telegram.png" width="30" height="30"></li></a>
-            <a href="https://github.com/Vladislav-Erofeev" target="_blank"><li><img src="logo/gh.png" width="30" height="30"></li></a>
+            <a href="https://vk.com/feed" target="_blank"><li><img src="pictures/logo/vk.png" width="30" height="30"></li></a>
+            <a href="https://discord.com/" target="_blank"><li><img src="pictures/logo/dis.png" width="35" height="30"></li></a>
+            <a href="https://www.instagram.com" target="_blank"><li><img src="pictures/logo/inst.png" width="30" height="30"></li></a>
+            <a href="https://web.telegram.org/k/" target="_blank"><li><img src="pictures/logo/telegram.png" width="30" height="30"></li></a>
+            <a href="https://github.com/Vladislav-Erofeev" target="_blank"><li><img src="pictures/logo/gh.png" width="30" height="30"></li></a>
         </ul>
 
         <input type="checkbox" id="open_check">
@@ -186,64 +186,8 @@
 
 </body>
 
-<script>
-    function ChangeTheme()
-    {
-        let lightTheme = "style/light.css";
-        let darkTheme = "style/dark.css";
+<script src="scripts/dark_theme.js"></script>
 
-        var currTheme = link.getAttribute("href");
-        var theme = "";
-
-        if(currTheme == lightTheme)
-        {
-            currTheme = darkTheme;
-            theme = "dark";
-        }
-        else
-        {
-            currTheme = lightTheme;
-            theme = "light";
-        }
-
-        link.setAttribute("href", currTheme);
-
-        Save(theme);
-    }
-
-    var btn1 = document.getElementById("theme_btn1");
-    var btn2 = document.getElementById("theme_btn2");
-    var link = document.getElementById("theme_link");
-
-    btn1.addEventListener("click", function () { ChangeTheme(); });
-    btn2.addEventListener("click", function () { ChangeTheme(); });
-
-    function myapp() {
-        const buttons = document.querySelectorAll(".button");
-        const cards = document.querySelectorAll(".card");
-
-        function filter(category, items) {
-            items.forEach((item) => {
-                const isItemFiltered = !item.classList.contains(category);
-                const isShowAll = category.toLowerCase() === "all";
-                if (isItemFiltered && !isShowAll) {
-                    item.classList.add("hide");
-                } else {
-                    item.classList.remove("hide");
-                }
-            });
-        }
-
-        buttons.forEach((button) => {
-            button.addEventListener("click", () => {
-                const currentCategory = button.dataset.filter;
-                console.log(currentCategory);
-                filter(currentCategory, cards);
-            });
-        });
-    }
-
-    myapp();
-</script>
+<script src="scripts/science.js"></script>
 
 </html>
