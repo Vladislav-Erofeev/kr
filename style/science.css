@@ -218,8 +218,31 @@ main h1 {
         font-size: 30pt;
         text-align: center;
     }
+
+    .card a {
+        font-size: 25pt;
+    }
 }
 
 .hide {
     display: none;
+}
+
+.card a {
+    width: 70%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba(59, 59, 59, 0.37);
+    border-radius: 40px;
+    transition: 0.3s;
+}
+
+.card a:hover {
+    background: rgba( 255, 255, 255, 0.5 );
+    transform: scale(103%);
 }
