@@ -56,6 +56,10 @@ body {
     filter: invert(100%);
 }
 
+#cards a {
+    color: white;
+}
+
 #form h1 {
     color: white;
 }

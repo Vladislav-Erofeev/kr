@@ -39,6 +39,10 @@ body {
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 }
 
+#cards a {
+    color: black;
+}
+
 .card_content {
     color: black;
     box-shadow: 0 4px 32px 0 rgba(140, 140, 140, 0.43);
