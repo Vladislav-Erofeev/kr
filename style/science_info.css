@@ -75,7 +75,7 @@ h2::after {
         width: 85%;
     }
 
-    p, ol {
+    p, main ol {
         font-size: 20pt;
     }
 
@@ -95,5 +95,31 @@ h2::after {
         width: 300px;
         height: 400px;
         margin-right: 30px;
+    }
+}
+
+.img {
+    position: relative;
+}
+
+.img img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.img figcaption {
+    position: absolute;
+    bottom: 0;
+    padding: 72px 20px 24px;
+    color: white;
+    font-size: 16pt;
+    font-family: 'Source Sans Pro', italic;
+    width: 94%;
+    background: linear-gradient(180deg,rgba(42,42,44,0) 0%,rgba(42,42,44,0.8) 100%);
+}
+
+@media screen and (max-width: 1000px) {
+    .img figcaption {
+        font-size: 20pt;
     }
 }
