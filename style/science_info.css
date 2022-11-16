@@ -127,5 +127,114 @@ h2::after {
 #gallery {
     width: 500px;
     height: 400px;
-    background-color: white;
+    background: rgba(218, 218, 218, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(58, 58, 58, 0.41);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#gallery #right,
+#gallery #left{
+    width: 50px;
+    height: 50px;
+    background: rgba(236, 236, 236, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(58, 58, 58, 0.41);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 10px;
+    position: absolute;
+    top:calc(50% - 25px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+#gallery #left {
+    left: -20px;
+}
+
+#gallery #right {
+    right: -20px;
+}
+
+#gallery .image {
+    width: 500px;
+    height: 350px;
+}
+
+#img1 {
+    background-color: crimson;
+}
+#img2 {
+    background-color: cyan;
+}
+#img3 {
+    background-color: chocolate;
+}
+
+#img4 {
+    background-color: cornflowerblue;
+}
+
+#scroller_area #scroller {
+    display: flex;
+    position: absolute;
+    left: 0px;
+    transition: 0.5s ease-in-out;
+}
+
+#scroller_area {
+    width: 500px;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+#right span,
+#right span::after {
+    width: 25px;
+    height: 4px;
+    background-color: black;
+    position: relative;
+    border-radius: 10px;
+}
+
+#right span {
+    transform: rotate(30deg);
+    top:-4px;
+    left: 3px;
+}
+
+#right span::after {
+    content: "";
+    display: block;
+    top: 11px;
+    left: 5px;
+    transform: rotate(-60deg);
+}
+
+#left span,
+#left span::after {
+    width: 25px;
+    height: 4px;
+    background-color: black;
+    position: relative;
+    border-radius: 10px;
+}
+
+#left span {
+    transform: rotate(-30deg);
+    top:-4px;
+    left: -3px;
+}
+
+#left span::after {
+    content: "";
+    display: block;
+    top: 11px;
+    left: -5px;
+    transform: rotate(60deg);
 }
