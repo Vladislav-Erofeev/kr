@@ -165,20 +165,6 @@ h2::after {
     height: 350px;
 }
 
-#img1 {
-    background-color: crimson;
-}
-#img2 {
-    background-color: cyan;
-}
-#img3 {
-    background-color: chocolate;
-}
-
-#img4 {
-    background-color: cornflowerblue;
-}
-
 #scroller_area #scroller {
     display: flex;
     position: absolute;
@@ -237,4 +223,14 @@ h2::after {
     top: 11px;
     left: -5px;
     transform: rotate(60deg);
+}
+
+.image {
+    display: flex;
+    align-items: center;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
 }
