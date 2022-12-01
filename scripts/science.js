@@ -1,3 +1,4 @@
+
 const buttons = document.querySelectorAll(".button");
 const cards = document.querySelectorAll(".card");
 
@@ -20,3 +21,4 @@ buttons.forEach((button) => {
         filter(currentCategory, cards);
     });
 });
+

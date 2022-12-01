@@ -253,50 +253,6 @@ main {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00a9e9",endColorstr="#005480",GradientType=1);
 }
 
-/* Настройка разделов со странами */
-
-#countries {
-    width: 90%;
-    margin: auto;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap: 50px;
-}
-
-.country {
-    width: 320px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-    transition: 0.3s ease;
-
-    background: rgba( 255, 255, 255, 0.1 );
-
-    backdrop-filter: blur( 2.5px );
-    -webkit-backdrop-filter: blur( 2.5px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    cursor: pointer;
-    font-size: 16pt;
-}
-
-.country img {
-    margin-top: -30px;
-    transition: 0.3s ease;
-    border-radius: 20px;
-}
-
-.country:hover img {
-    transform: translateY(-20px);
-}
-
-.country:hover {
-    transform: scale(110%);
-}
-
 /* Настройка карточек */
 
 #card {

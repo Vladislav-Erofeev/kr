@@ -11,20 +11,15 @@ function ChangeTheme()
     let darkTheme = "style/dark.css";
 
     var currTheme = link.getAttribute("href");
-    var theme = "";
 
     if(currTheme == lightTheme)
     {
         currTheme = darkTheme;
-        theme = "dark";
     }
     else
     {
         currTheme = lightTheme;
-        theme = "light";
     }
 
     link.setAttribute("href", currTheme);
-
-    Save(theme);
 }

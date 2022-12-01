@@ -1,3 +1,4 @@
+
 let field = document.getElementById('scroller');
 let leftPos = 0;
 let left = document.getElementById("left");
@@ -19,3 +20,4 @@ right.addEventListener('click', () => {
     }
     field.style.left = `${leftPos}px`;
 })
+
